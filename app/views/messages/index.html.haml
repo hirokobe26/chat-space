@@ -1,11 +1,18 @@
 %body
-  %chat-side
-    %chat-side__user
-      %chat-side__user__content
-        %chat-side__user__content__name
-        hiro26
-        %a{href: "", class: chat-side__user__content__new-group}
-        %a{href: "", class: chat-side__user__content__edit-user}
-    %chat-side__groups
-      %chat-side__groups__lists
-        %a{href: ""}
+  .chat-side
+    .chat-side__header
+      .chat-side__header__name
+        %p hiro26
+      %ul
+        %li
+          = fa_icon("pencil-square-o", class: "pencil-icon")
+        %li
+          = fa_icon("cog", class: "cog-icon")
+    .chat-side__groups
+      .chat-side__groups__list
+        .chat-side__groups__list__name プログラミンググループ
+        .chat-side__groups__list__message まだメッセージはありません
+      .chat-side__groups__list
+        .chat-side__groups__list__name sample
+        .chat-side__groups__list__message aaaaa
+
