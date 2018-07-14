@@ -1,18 +1,18 @@
 %body
-  .chat-side
+  .chat-side.clearfix
     .chat-side__header
-      .chat-side__header__name
-        %p hiro26
+      %p hirokobe26
       %ul
         %li
-          = fa_icon("pencil-square-o", class: "pencil-icon")
+          %i.fa.fa-edit
         %li
-          = fa_icon("cog", class: "cog-icon")
-    .chat-side__groups
-      .chat-side__groups__list
-        .chat-side__groups__list__name プログラミンググループ
-        .chat-side__groups__list__message まだメッセージはありません
-      .chat-side__groups__list
-        .chat-side__groups__list__name sample
-        .chat-side__groups__list__message aaaaa
+          %i.fa.fa-cog
+    .chat-side__group
+      .chat-side__group__list
+        .chat-side__group__list__name プログラミンググループ
+        .chat-side__group__list__message まだメッセージはありません
+      .chat-side__group__list
+        .chat-side__group__list__name sample
+        .chat-side__group__list__message aaaaa
+
 

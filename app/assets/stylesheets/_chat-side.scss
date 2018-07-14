@@ -1,3 +1,7 @@
+*{
+  border: solid 1px green;
+}
+
 @mixin padding{
   padding-right: 20px;
   padding-left: 20px;
@@ -10,15 +14,16 @@
 
 .chat-side{
   width: 300px;
+  height: 100vh;
   color: #FFFFFF;
-  &__groups{
-    background-color: #2f3e51;
-    @include padding;
+  background-color: #2f3e51;
+  &__group{
+    padding-top: 20px;
     &__list{
-      @include padding_list;
+      padding-bottom: 40px;
+      padding-left: 20px;
       &__name{
         font-size: 15px;
-        margin-bottom: 5px;
       }
       &__message{
         font-size: 11px;
@@ -26,11 +31,23 @@
     }
   }
   &__header{
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 28px;
+    padding-bottom: 70px;
     background-color: #253141;
-    @include padding;
-    &__name p{
-      font-size: 16px;
-      font-weight: bold;
+    p{
+      float: left;
+      padding-left: 20px;
+    }
+    ul{
+      float: right;
+      border: solid 2px green;
+      padding-right: 20px;
+      li{
+        float: right;
+        margin-right: 10px;
+      }
     }
   }
 }
