@@ -1,0 +1,151 @@
+@import "./variable";
+
+.chat-side{
+  width: 300px;
+  height: 100vh;
+  float: left;
+  color: $sidebar-font-color;
+  background-color: $sidebar-background-color;
+  &__group{
+    padding-top: 20px;
+    &__list{
+      padding-bottom: 40px;
+      padding-left: 20px;
+      &__name{
+        font-size: 15px;
+      }
+      &__message{
+        font-size: 11px;
+      }
+    }
+  }
+  &__header{
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 40px;
+    padding-bottom: 77px;
+    background-color: $sidebar-background-color-header;
+    p{
+      float: left;
+      padding-left: 20px;
+    }
+    ul{
+      float: right;
+      padding-right: 20px;
+      li{
+        float: right;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.chat-main{
+  width: calc(100vw - 300px);
+  height: 100vh;
+  background-color: white;
+  float: right;
+  position: relative;
+  &__header{
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: white;
+    border-bottom: solid 1px #eeeeee;
+    position: relative;
+    &:after{
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+    &__group{
+      padding-top: 35px;
+      &__name{
+      font-size: 20px;
+      color: $message-header-name-color;
+      }
+      &__member{
+      margin-top: 15px;
+      margin-bottom: 17px;
+      font-size: 12px;
+      color: $message-time-color;
+      }
+      &__edit-button{
+      margin: 28px 15px 0px 0px;
+      padding: 0px 20px 0px 20px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $edit-and-send-button-color;
+      border: solid 1px $edit-and-send-button-color;
+      float: right;
+      position: absolute;
+      top: 3px;
+      left: 1000px;
+      }
+    }
+  }
+  &__message{
+    padding-top: 46px;
+    padding-left: 40px;
+    &__group{
+      margin-bottom: 40px;
+      &__name{
+        display: inline;
+        font-size: 16px;
+        font-weight: bold;
+        color: $message-name-and-comment-color;
+      }
+      &__time{
+        vertical-align: top;
+        display: inline;
+        font-size: 12px;
+        color: $message-time-color;
+        margin-left: 10px;
+      }
+      &__comment{
+        margin-top: 10px;
+        font-size: 14px;
+        color: $message-name-and-comment-color;
+      }
+    }
+  }
+  &__input{
+    height: 90px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color:$message-input-background-color;
+    form{
+      position: relative;
+      .text-box{
+        margin-left: 40px;
+        margin-top: 20px;
+        height: 50px;
+        width: 925px;
+        float: left;
+        &::placeholder{
+          padding-left: 10px;
+        }
+      }
+      label{
+        position: absolute;
+        top: 35px;
+        right: 185px;
+      }
+      .send-button{
+        margin-right: 40px;
+        margin-top: 20px;
+        height: 50px;
+        padding: 0px 28px 0px 28px;
+        background-color: $edit-and-send-button-color;
+        color: white;
+        border-style: none;
+        float: right;
+      }
+    }
+  }
+}
+
