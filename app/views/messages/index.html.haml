@@ -18,25 +18,24 @@
               .group__name
                 = group.name
               .group__message
-                メッセージはまだありません。
+                = group.show_last_message
   .chat-main
     .chat-main__header
       .chat-main__header__group
-        .chat-main__header__group__name プログラミンググループ
-        .chat-main__header__group__member MEMBER: hirokobe26
+        .chat-main__header__group__name
+          = @group.name
+        .chat-main__header__group__member
+          = "Member:#{@group.users.first.name}"
         .chat-main__header__group__edit-button Edit
     .chat-main__message
-      .chat-main__message__group
-        .chat-main__message__group__name hirokobe26
-        .chat-main__message__group__time 2018/07/15 02:07:34
-        .chat-main__message__group__comment 終わり！
-      .chat-main__message__group
-        .chat-main__message__group__name hirokobe26
-        .chat-main__message__group__time 2018/07/14 23:49:19
-        .chat-main__message__group__comment マークアップなう
+      .messages
+        = render @messages
     .chat-main__input
-      %form
-        %input.text-box{type: "text", placeholder: "type a message", id: "upload-icon"}
-        %label.upload-label{for: "upload-icon"}
-          %i.fa.fa-picture-o
-        %input.send-button{type: "submit", value: "SEND"}
+      .form
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          .form__mask
+            = f.label :image, class: 'form__mask__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'form__submit'
