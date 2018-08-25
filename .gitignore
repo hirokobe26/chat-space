@@ -20,3 +20,5 @@ public/uploads/*
 #Ignore test file
 /.rspec
 /spec/
+
+#ignore it
