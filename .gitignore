@@ -16,3 +16,7 @@
 # Ignore Byebug command history file.
 .byebug_history
 public/uploads/*
+
+#Ignore test file
+/.rspec
+/spec/
