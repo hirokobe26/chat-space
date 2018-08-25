@@ -18,7 +18,7 @@
 public/uploads/*
 
 #Ignore test file
-/.rspec
-/spec/
+#/.rspec
+#/spec/
 
 #ignore it
