@@ -36,4 +36,8 @@ $(function(){
       }
     })
   });
+
+  $(document).on("click", "a.user-search-add",function(){
+    console.log("できました")
+  })
 });
