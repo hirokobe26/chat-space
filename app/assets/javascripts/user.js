@@ -52,4 +52,8 @@ $(function(){
     $(this).parent().remove();
     add_chatMember(name, id);
   })
+
+  $(document).on("click","a.chat-group-user__btn--remove", function(){
+    $(this).parent().remove();
+  })
 });
