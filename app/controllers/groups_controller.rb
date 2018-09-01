@@ -7,7 +7,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(group_params)
+    @group = Group.new(group_params).merge(id: current_user.id)
     if @group.save
       redirect_to "/groups/#{@group.id}/messages", notice: 'グループを作成しました'
     else
