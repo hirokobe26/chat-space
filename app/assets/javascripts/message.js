@@ -52,4 +52,18 @@ $(function(){
       alert('error');
     });
   });
+   setInterval(function(){
+    var url = location.href;
+    console.log(url);
+    $.ajax({
+      type: 'GET',
+      url: 'url',
+      dataType: 'json'
+    })
+    .done(function(data){
+      var html = buildHTML(data);
+      $('.messages').empty()
+      $('.messages').append(html)
+    })
+   },5000);
 });
