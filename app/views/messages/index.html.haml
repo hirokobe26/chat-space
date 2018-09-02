@@ -26,7 +26,8 @@
           = @group.name
         .chat-main__header__group__member
           = "Member:#{@group.users.first.name}"
-        .chat-main__header__group__edit-button Edit
+        .chat-main__header__group__edit-button
+          = link_to "Edit", edit_group_path(@group)
     .chat-main__message
       .messages
         = render @messages
