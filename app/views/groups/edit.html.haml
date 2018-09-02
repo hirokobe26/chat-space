@@ -21,7 +21,7 @@
         #user-search-result
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label :chat_group_チャットメンバー, "追加されたメンバー", class: 'chat-group-form__label'
+        = f.label :user_ids, "追加されたメンバー", class: 'chat-group-form__label'
       .chat-group-form__field--right
         #chat-group-users
           - @users.each do |user|
