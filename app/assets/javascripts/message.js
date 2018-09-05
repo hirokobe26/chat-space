@@ -54,16 +54,21 @@ $(function(){
   });
    setInterval(function(){
     var url = location.href;
-    console.log(url);
     $.ajax({
-      type: 'GET',
-      url: 'url',
+      url: location.href,
+      type: "GET",
       dataType: 'json'
     })
-    .done(function(data){
-      var html = buildHTML(data);
-      $('.messages').empty()
-      $('.messages').append(html)
+    .done(function(messages) {
+      $(".messages").empty();
+      if (messages.length !== 0) {
+        messages.forEach(function(message){
+          console.log("できている");
+        });
+      }
+    })
+    .fail(function(messages){
+      alert('自動更新に失敗しました');
     })
    },5000);
 });
