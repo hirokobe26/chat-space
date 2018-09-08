@@ -63,7 +63,8 @@ $(function(){
       $(".messages").empty();
       if (messages.length !== 0) {
         messages.forEach(function(message){
-          console.log("できている");
+          var html = buildHTML(message);
+          $(".messages").append(html);
         });
       }
     })
