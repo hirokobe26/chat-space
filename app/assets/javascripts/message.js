@@ -54,19 +54,18 @@ $(function(){
   });
    setInterval(function(){
     var url = location.href;
+    var id = $(".messages > .message:last").attr("id");
     $.ajax({
       url: url,
       type: "GET",
+      data: {message_id: id},
       dataType: 'json'
     })
     .done(function(messages) {
-      var id = $(".messages > .message:last").attr("id");
       if (messages.length !== 0) {
         messages.forEach(function(message){
-          if (id < message.id){
             var html = buildHTML(message);
             $(".messages").append(html);
-          }
         });
       }
     })
