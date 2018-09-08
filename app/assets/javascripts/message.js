@@ -6,7 +6,7 @@ $(function(){
     else {
       var post_url = `<div class="lower-message__image">`
     }
-      var html = `<div class="message">
+      var html = `<div class="message" id = '${message.id}'>
                     <div class="upper-message">
                       <div class="upper-message__user-name">
                         ${ message.user_name }
@@ -55,12 +55,11 @@ $(function(){
    setInterval(function(){
     var url = location.href;
     $.ajax({
-      url: location.href,
+      url: url,
       type: "GET",
       dataType: 'json'
     })
     .done(function(messages) {
-      $(".messages").empty();
       if (messages.length !== 0) {
         messages.forEach(function(message){
           var html = buildHTML(message);
@@ -71,5 +70,5 @@ $(function(){
     .fail(function(messages){
       alert('自動更新に失敗しました');
     })
-   },5000);
+   },5000000000);
 });
