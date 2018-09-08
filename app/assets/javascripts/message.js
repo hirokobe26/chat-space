@@ -60,15 +60,18 @@ $(function(){
       dataType: 'json'
     })
     .done(function(messages) {
+      var id = $(".messages > .message:last").attr("id");
       if (messages.length !== 0) {
         messages.forEach(function(message){
-          var html = buildHTML(message);
-          $(".messages").append(html);
+          if (id < message.id){
+            var html = buildHTML(message);
+            $(".messages").append(html);
+          }
         });
       }
     })
     .fail(function(messages){
       alert('自動更新に失敗しました');
     })
-   },5000000000);
+   },5000);
 });
