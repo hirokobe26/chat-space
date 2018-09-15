@@ -53,6 +53,7 @@ $(function(){
     });
   });
    setInterval(function(){
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
     var url = location.href;
     var id = $(".messages > .message:last").attr("id");
     $.ajax({
@@ -72,5 +73,6 @@ $(function(){
     .fail(function(messages){
       alert('自動更新に失敗しました');
     })
+  }
    },5000);
 });
