@@ -1,5 +1,12 @@
 class MessagesController < ApplicationController
-  before_action :set_group
+  before_action :set_group, only: [:index,:create]
+
+  def after_login
+    @group = current_user.groups[0]
+    @messages = @group.messages.includes(:user)
+    @message = Message.new
+    render :index
+  end
 
   def index
     @message = Message.new
