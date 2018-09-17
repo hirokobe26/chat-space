@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   before_action :set_group, only: [:index,:create]
 
   def after_login
+    @message = Message.new
     @group = current_user.groups[0]
     if @group
       @messages = @group.messages.includes(:user)
@@ -9,7 +10,6 @@ class MessagesController < ApplicationController
     else
       redirect_to controller: 'groups', action: 'new'
     end
-    @message = Message.new
   end
 
   def index
