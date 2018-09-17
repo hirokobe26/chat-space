@@ -3,9 +3,13 @@ class MessagesController < ApplicationController
 
   def after_login
     @group = current_user.groups[0]
-    @messages = @group.messages.includes(:user)
+    if @group
+      @messages = @group.messages.includes(:user)
+      render :index
+    else
+      redirect_to controller: 'groups', action: 'new'
+    end
     @message = Message.new
-    render :index
   end
 
   def index
