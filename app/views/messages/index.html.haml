@@ -12,13 +12,12 @@
             = fa_icon 'cog', class: 'icon'
     .chat-side__group
       .chat-side__group__list
-        .chat-side__group__list__name
-          - current_user.groups.each do |group|
-            = link_to group_messages_path(group) do
-              .group__name
-                = group.name
-              .group__message
-                = group.show_last_message
+        - current_user.groups.each do |group|
+          = link_to group_messages_path(group) do
+            .group_name
+              = group.name
+            .group_message
+              = group.show_last_message
   .chat-main
     .chat-main__header
       .chat-main__header__group
@@ -33,10 +32,10 @@
         = render @messages
     .chat-main__input
       .form
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-          .form__mask
-            = f.label :image, class: 'form__mask__image' do
-              = fa_icon 'picture-o', class: 'icon'
-              = f.file_field :image, class: 'hidden'
-          = f.submit 'Send', class: 'form__submit'
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__message__mask
+          = f.label :image, class: 'form__message__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'

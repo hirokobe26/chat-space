@@ -6,19 +6,6 @@
   float: left;
   color: $sidebar-font-color;
   background-color: $sidebar-background-color;
-  &__group{
-    padding-top: 20px;
-    &__list{
-      padding-bottom: 40px;
-      padding-left: 20px;
-      &__name{
-        font-size: 15px;
-      }
-      &__message{
-        font-size: 11px;
-      }
-    }
-  }
   &__header{
     font-weight: bold;
     font-size: 16px;
@@ -36,6 +23,13 @@
         float: right;
         margin-right: 10px;
       }
+    }
+  }
+  &__group{
+    padding-top: 20px;
+    &__list{
+      margin-bottom: 60px;
+      padding-left: 20px;
     }
   }
 }
@@ -148,4 +142,42 @@
     }
   }
 }
+
+.group_name{
+  color: white;
+}
+.group_message{
+  color: white;
+  font-size: 10px;
+  margin-bottom: 20px;
+}
+
+.form{
+  position: relative;
+  &__message{
+    margin-left: 40px;
+    margin-top: 20px;
+    height: 50px;
+    width: 925px;
+    float: left;
+    &::placeholder{
+      padding-left: 10px;
+    }
+  &__mask{
+    top: 35px;
+    right: 185px;
+  }
+}
+}
+
+.form__submit{
+    margin-right: 40px;
+    margin-top: 20px;
+    height: 50px;
+    padding: 0px 28px 0px 28px;
+    background-color: $edit-and-send-button-color;
+    color: white;
+    border-style: none;
+    float: right;
+  }
 
