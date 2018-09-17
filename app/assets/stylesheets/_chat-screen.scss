@@ -181,3 +181,24 @@
     float: right;
   }
 
+.message{
+  margin-bottom: 25px;
+}
+
+.upper-message{
+  &__user-name{
+    font-size: 25px;
+    display:inline-block;
+  }
+  &__date{
+    color: #999;
+    display:inline-block;
+  }
+}
+
+.lower-meesage{
+  padding-top: 5px;
+}
+
+
+
